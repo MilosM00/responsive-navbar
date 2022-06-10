@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav{
+    font-family: 'Salsa', cursive;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #2d333b;
+    color: rgb(255, 255, 255);
+}
+
+.hamburger{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 19px;
+
+
+    font-size: 25px;
+    flex-direction: column;
+    display: none;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.bar{
+    height: 3px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.logo-nav{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-links{
+    display: flex;
+}
+
+li{
+    padding: 0 10px;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+
+@media (max-width: 750px) {
+    .nav{
+        padding: 20px;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links{
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    li{
+        padding: 10px;
+    }
+
+    .nav-links.active{
+        display: flex;
+    }
 }
