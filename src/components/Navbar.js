@@ -2,8 +2,10 @@ import React from "react";
 
 const Navbar = () =>{
 
+    const [hamburger, setHamburger] = React.useState(true);
+
     const hamburgerHandle = () =>{
-        document.querySelector(`.nav-links`).classList.toggle(`active`);
+        setHamburger(!hamburger)
     };
 
     return(
@@ -15,9 +17,13 @@ const Navbar = () =>{
                 <p className="logo-nav">Company</p>
 
                 <p onClick={hamburgerHandle} className="hamburger">
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
+                    {hamburger === true &&
+                        <i className="fa fa-bars"></i>
+                    }
+
+                    {hamburger === false &&
+                        <i className="fa fa-times"></i>
+                    }
                 </p>
 
                 <ul className="nav-links">
@@ -28,8 +34,22 @@ const Navbar = () =>{
                     <li><a href="https://github.com/" target="_blank" rel="noreferrer">Testimonials</a></li>
                     <li><a href="https://github.com/" target="_blank" rel="noreferrer">Blog</a></li>
                 </ul>
+
                 
             </nav>
+            
+                { hamburger === false &&
+                    <div className="show-links">
+                        <ul>
+                            <li><a href="https://github.com/" target="_blank" rel="noreferrer">Home</a></li>
+                            <li><a href="https://github.com/" target="_blank" rel="noreferrer">About</a></li>
+                            <li><a href="https://github.com/" target="_blank" rel="noreferrer">Contact</a></li>
+                            <li><a href="https://github.com/" target="_blank" rel="noreferrer">Services</a></li>
+                            <li><a href="https://github.com/" target="_blank" rel="noreferrer">Testimonials</a></li>
+                            <li><a href="https://github.com/" target="_blank" rel="noreferrer">Blog</a></li>
+                        </ul>
+                    </div>
+                }
 
         </div>
 
