@@ -4,7 +4,14 @@
     box-sizing: border-box;
 }
 
+body{
+    height: 1000px;
+}
+
 .nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
     font-family: 'Salsa', cursive;
     padding: 20px 0;
     display: flex;
@@ -17,14 +24,9 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 30px;
-    height: 19px;
-
 
     font-size: 25px;
-    flex-direction: column;
     display: none;
-    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -54,20 +56,25 @@ a{
     font-size: 20px;
 }
 
+.show-links{
+    display: none;
+    text-align: center;
+    background-color: #2d333b;
+    position: fixed;
+    width: 200px;
+    top:63px;
+    right: 0;
+}
+
 
 @media (max-width: 750px) {
     .nav{
         padding: 20px;
         justify-content: space-between;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .nav-links{
-        width: 100%;
         display: none;
-        flex-direction: column;
-        text-align: center;
     }
 
     .hamburger{
@@ -78,7 +85,7 @@ a{
         padding: 10px;
     }
 
-    .nav-links.active{
-        display: flex;
+    .show-links{
+        display: block;
     }
 }
